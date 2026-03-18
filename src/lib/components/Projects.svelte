@@ -1,20 +1,21 @@
 <script>
   import { scrollReveal } from '$lib/scrollReveal.js';
-
+   import { siteAssets } from '$lib/assets.js';
+  
   const projects = [
-    { id: 1, title: 'Project Alpha', image: '/projects/project-1.jpg', tags: ['HTML5', 'PHP', 'Firebase'],
+    { id: 1, title: 'Project Alpha', image: siteAssets.projectImg(1), tags: ['HTML5', 'PHP', 'Firebase'],
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       longDesc: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.',
       link: 'https://spesjobmatch.flutterflow.app/login', github: '#', featured: true },
-    { id: 2, title: 'Project Beta', image: '/projects/project-2.jpg', tags: ['FlutterFlow', 'Firebase'],
+    { id: 2, title: 'Project Beta', image: siteAssets.projectImg(2) , tags: ['FlutterFlow', 'Firebase'],
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.',
       longDesc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur.',
       link: '#', github: '#', featured: true },
-    { id: 3, title: 'Project Gamma', image: '/projects/project-3.jpg', tags: ['HTML5', 'PHP'],
+    { id: 3, title: 'Project Gamma', image: siteAssets.projectImg(3), tags: ['HTML5', 'PHP'],
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.',
       longDesc: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit consequuntur magni dolores.',
       link: '#', github: '#', featured: false },
-    { id: 4, title: 'Project Delta', image: '/projects/project-4.jpg', tags: ['Firebase', 'FlutterFlow'],
+    { id: 4, title: 'Project Delta', image: siteAssets.projectImg(4), tags: ['Firebase', 'FlutterFlow'],
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos.',
       longDesc: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus placeat.',
       link: '#', github: '#', featured: false },

@@ -1,4 +1,5 @@
 <script>
+ import { siteAssets } from '$lib/assets.js';
   import { scrollReveal } from '$lib/scrollReveal.js';
   let imgError = $state(false);
 
@@ -21,7 +22,7 @@
         
         <div style="position:relative;width:18rem;height:18rem;border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background:#111118;">
           {#if !imgError}
-            <img src="/me.png" alt="m4yku" style="width:100%;height:100%;object-fit:cover;" onerror={() => imgError = true} />
+            <img src={siteAssets.avatar} alt="m4yku" style="width:100%;height:100%;object-fit:cover;" onerror={() => imgError = true} />
           {:else}
             <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#111118;">
               <span style="font-size:5rem;">👤</span>
@@ -56,7 +57,7 @@
         {/each}
       </div>
       
-      <a href="/resume.pdf" download class="btn-primary" style="display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;">
+      <a href={siteAssets.resume} download class="btn-primary" style="display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { scrollReveal } from '$lib/scrollReveal';
+  
 
   const roles = ['Web Developer', 'OS Learner & Enthusiast', 'Custom ROM Lover'];
   let currentRole = 0;
