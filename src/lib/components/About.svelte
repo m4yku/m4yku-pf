@@ -21,7 +21,7 @@
         
         <div style="position:relative;width:18rem;height:18rem;border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background:#111118;">
           {#if !imgError}
-            <img src="/me.jpg" alt="m4yku" style="width:100%;height:100%;object-fit:cover;" onerror={() => imgError = true} />
+            <img src="/me.png" alt="m4yku" style="width:100%;height:100%;object-fit:cover;" onerror={() => imgError = true} />
           {:else}
             <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#111118;">
               <span style="font-size:5rem;">👤</span>
