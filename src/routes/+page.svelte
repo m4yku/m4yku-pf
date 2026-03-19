@@ -3,20 +3,29 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import Hero from '$lib/components/Hero.svelte';
   import About from '$lib/components/About.svelte';
-  import Skills from '$lib/components/Skills.svelte';
+  import Expertise from '$lib/components/Expertise.svelte';
   import Projects from '$lib/components/Projects.svelte';
   import Contact from '$lib/components/Contact.svelte';
+  import ActiveLoad from '$lib/components/ActiveLoad.svelte';
 </script>
-
-<svelte:head>
-  <title>m4yku · Portfolio</title>
-</svelte:head>
 
 <Navbar />
 <main>
   <Hero />
-  <About />
-  <Skills />
-  <Projects />
-  <Contact />
+
+  <ActiveLoad defaultHeight="600px">
+    <About />
+  </ActiveLoad>
+
+  <ActiveLoad defaultHeight="800px">
+    <Expertise />
+  </ActiveLoad>
+
+  <ActiveLoad defaultHeight="1200px">
+    <Projects />
+  </ActiveLoad>
+
+  <ActiveLoad defaultHeight="400px">
+    <Contact />
+  </ActiveLoad>
 </main>

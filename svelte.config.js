@@ -8,14 +8,13 @@ const config = {
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: '404.html',
-      precompress: false,
-      strict: true
+      fallback: '404.html'
     }),
     paths: {
-      // ⚠️ PALITAN ITO: Ilagay ang pangalan ng repository mo sa GitHub
-      // Halimbawa, kung ang repo mo ay "m4yku-pf", ilagay ang '/m4yku-pf'
       base: process.env.NODE_ENV === 'production' ? '/m4yku-pf' : '',
+    },
+    alias: {
+      $lib: 'src/lib'
     }
   }
 };
