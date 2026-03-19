@@ -10,8 +10,9 @@ const config = {
       assets: 'build',
       fallback: '404.html'
     }),
+    appDir: 'app', // <-- THIS IS THE MAGIC FIX! Removes the underscore.
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/m4yku-pf' : '',
+      base: process.argv.includes('dev') ? '' : '/m4yku-pf',
     },
     alias: {
       $lib: 'src/lib'
