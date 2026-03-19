@@ -13,19 +13,19 @@
 <main>
   <Hero />
 
-  <ActiveLoad defaultHeight="600px">
+  <ActiveLoad id="about" defaultHeight="600px">
     <About />
   </ActiveLoad>
 
-  <ActiveLoad defaultHeight="800px">
+  <ActiveLoad id="expertise" defaultHeight="800px">
     <Expertise />
   </ActiveLoad>
 
-  <ActiveLoad defaultHeight="1200px">
+  <ActiveLoad id="projects" defaultHeight="1200px">
     <Projects />
   </ActiveLoad>
 
-  <ActiveLoad defaultHeight="400px">
+  <ActiveLoad id="contact" defaultHeight="400px">
     <Contact />
   </ActiveLoad>
 </main>

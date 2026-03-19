@@ -48,9 +48,11 @@
 
   $effect(() => { document.body.style.overflow = menuOpen ? 'hidden' : ''; });
 
-  function scrollTo(id) {
+  // Custom function for smooth scrolling anchors
+  function handleLinkClick(e, link) {
+    e.preventDefault();
     menuOpen = false;
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
   }
 </script>
 
@@ -90,11 +92,17 @@
       <ul class="nav-links">
         {#each links as link, i}
           <li style="animation-delay:{i*75}ms" class="nav-item" class:mounted>
-            <button class="nav-btn" class:active={activeSection === link} onclick={() => scrollTo(link)}>
+            <a 
+              href="#{link.toLowerCase()}" 
+              class="nav-btn" 
+              class:active={activeSection === link} 
+              onclick={(e) => handleLinkClick(e, link)}
+              style="text-decoration: none; color: inherit; display: inline-flex;"
+            >
               <span class="nav-prefix">./</span>
               <span class="nav-label">{link}</span>
               <span class="nav-underline"></span>
-            </button>
+            </a>
           </li>
         {/each}
       </ul>
@@ -115,23 +123,24 @@
   </nav>
 </header>
 
-<div class="mobile-overlay" class:open={menuOpen}>
+<div class="mobile-overlay" class:open={menuOpen} style="pointer-events: {menuOpen ? 'auto' : 'none'};">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="mobile-inner">
     <div style="height:64px;flex-shrink:0;"></div>
     <nav class="mobile-nav">
       {#each links as link, i}
-        <button
+        <a
+          href="#{link.toLowerCase()}"
           class="mobile-link"
-          style="transition-delay:{menuOpen ? i*65+50 : 0}ms"
+          style="transition-delay:{menuOpen ? i*65+50 : 0}ms; text-decoration: none;"
           class:visible={menuOpen}
-          onclick={() => scrollTo(link)}
+          onclick={(e) => handleLinkClick(e, link)}
         >
           <span class="mobile-num">0{i+1}</span>
           <span class="mobile-label">{link}</span>
           <span class="mobile-arrow">→</span>
-        </button>
+        </a>
       {/each}
     </nav>
     <div class="mobile-footer" class:visible={menuOpen} style="transition-delay:{menuOpen ? '320ms' : '0ms'}">

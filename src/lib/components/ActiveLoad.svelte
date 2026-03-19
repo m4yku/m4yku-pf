@@ -1,19 +1,24 @@
 <script>
-  let { children, defaultHeight = "100vh" } = $props();
+  // FIX: Added 'id' to your props so the wrapper can use it
+  let { children, defaultHeight = "100vh", id = "" } = $props();
   
   let isVisible = $state(false);
   let element;
-  let containerHeight = $state(defaultHeight);
+  
+  let calculatedHeight = $state(""); 
+  let containerHeight = $derived(calculatedHeight || defaultHeight);
 
   $effect(() => {
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
           isVisible = true;
         } else {
-          if (element && isVisible) {
-            containerHeight = `${element.getBoundingClientRect().height}px`;
+          if (isVisible && element) {
+            calculatedHeight = `${element.getBoundingClientRect().height}px`;
           }
           isVisible = false;
         }
@@ -21,14 +26,12 @@
       { rootMargin: '300px' } 
     );
 
-    if (element) {
-      observer.observe(element);
-    }
+    observer.observe(element);
     return () => observer.disconnect();
   });
 </script>
 
-<div bind:this={element} style="min-height: {containerHeight};">
+<div {id} bind:this={element} style="min-height: {containerHeight}; width: 100%;">
   {#if isVisible}
     {@render children()}
   {/if}
