@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build --add"
+	
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.0",
