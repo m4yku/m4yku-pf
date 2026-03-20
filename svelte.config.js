@@ -1,19 +1,20 @@
 import adapter from '@sveltejs/adapter-static';
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: null,
-      precompress: false,
-      strict: true
-    }),
-    paths: {
-      // FORCE the base path - no condition!
-      base: '/m4yku-pf'
-    }
-  }
+	kit: {
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false,
+			strict: true
+		}),
+		paths: {
+			// FORCE base path - walang condition!
+			base: '/m4yku-pf'
+		}
+	}
 };
 
 export default config;
