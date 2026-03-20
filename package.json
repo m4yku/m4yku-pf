@@ -1,26 +1,19 @@
 {
-	"name": "m4yku-pf",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"deploy": "vite build && gh-pages -d build -t"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^7.0.0",
-		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.50.2",
-		"@sveltejs/vite-plugin-svelte": "^6.2.4",
-		"@tailwindcss/postcss": "^4.2.1",
-		"autoprefixer": "^10.4.27",
-		"gh-pages": "^6.3.0",
-		"postcss": "^8.5.8",
-		"svelte": "^5.51.0",
-		"tailwindcss": "^4.2.1",
-		"vite": "^7.3.1"
-	}
+  "name": "m4yku-portfolio",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && touch build/.nojekyll && npx gh-pages -d build -t true"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "gh-pages": "^6.1.0",
+    "svelte": "^5.0.0",
+    "vite": "^5.0.0"
+  }
 }
