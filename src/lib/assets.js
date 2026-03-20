@@ -1,3 +1,4 @@
+// @ts-ignore
 import { base } from '$app/paths';
 
 // Ang function na ito ang magkakabit ng /m4yku-pf/ sa unahan ng lahat ng assets mo
