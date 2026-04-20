@@ -1,5 +1,15 @@
-@import "tailwindcss";
+/* 1. Google Fonts MUST be the very first line */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* 2. Tailwind import comes right after */
+@import "tailwindcss";
+
+/* 3. Tell Tailwind v4 about your custom font classes */
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
 
 /* ==========================================================================
    1. VARIABLES

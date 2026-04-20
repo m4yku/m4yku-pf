@@ -34,8 +34,8 @@
       image: siteAssets.projectImg(3),
       tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       demo: '', 
-      frontend: '#', 
-      backend: '#',
+      frontend: 'https://m4yku.github.io/sateasfaction-githubpages/', 
+      backend: 'https://github.com/m4yku/sateasfaction/',
       description: 'A web-based ordering and inventory system for a milk tea shop with a customer ordering page and admin dashboard.',
     },
 ];
