@@ -36,7 +36,7 @@
   .card-handle { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #5c7b99; }
 </style>
 
-<section class="contact-wrapper" style="padding:4rem 1.5rem; text-align:center;">
+<section id='Contact' class="contact-wrapper" style="padding:4rem 1.5rem; text-align:center;">
   <div style="max-width:34rem; margin:0 auto;">
     <p style="font-family:'JetBrains Mono',monospace; color:#6ecbff; font-size:0.75rem; margin-bottom:0.5rem;">// get in touch</p>
       <h2 class="sec-title" style="margin-bottom:0.9rem;">Let's <span style="color:#3ab7ff">Connect</span></h2>

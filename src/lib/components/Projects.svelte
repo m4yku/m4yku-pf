@@ -52,7 +52,7 @@
   @media (max-width: 768px) { .proj-grid { grid-template-columns: 1fr; } }
 </style>
 
-<section id="projects" style="padding:7rem 1.5rem;position:relative;">
+<section id="Projects" style="padding:7rem 1.5rem;position:relative;">
   <div style="position:absolute;width:16rem;height:16rem;background:rgba(110,203,255,0.07);border-radius:50%;filter:blur(80px);top:0;left:0;pointer-events:none;"></div>
 
   <div style="max-width:1100px;margin:0 auto;">

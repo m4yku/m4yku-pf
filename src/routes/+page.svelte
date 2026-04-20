@@ -8,16 +8,16 @@
   import Contact from '$lib/components/Contact.svelte';
   import '../app.css';
 
-  let activeTab = $state('Hero');
-  let isMobile = $state(false);
+  let activeTab = $state('Hero'); // 
+  let isMobile = $state(false); // 
 
   onMount(() => {
-    // 1. Check screen size para sa Mobile vs Desktop behavior
+    // Check mobile state pagka-load 
     const checkMobile = () => isMobile = window.innerWidth < 768;
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
-    // 2. I-load ang saved tab mula sa session
+    // I-load ang saved tab mula sa session 
     const savedTab = sessionStorage.getItem('activeTab');
     if (savedTab) activeTab = savedTab;
 
@@ -25,9 +25,13 @@
   });
 
   function changeTab(tabName) {
-    activeTab = tabName;
-    sessionStorage.setItem('activeTab', tabName);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    activeTab = tabName; // [cite: 54]
+    sessionStorage.setItem('activeTab', tabName); // [cite: 54]
+    
+    // Smooth scroll sa taas tuwing nagpapalit ng tab sa desktop 
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 </script>
 
@@ -37,7 +41,7 @@
   <main>
     {#if isMobile}
       <div class="mobile-stack">
-        <section id="Hero"><Hero onNavigate={changeTab} /></section>
+        <section id="Hero"><Hero onNavigate={changeTab} {isMobile} /></section>
         <section id="About"><About /></section>
         <section id="Expertise"><Expertise /></section>
         <section id="Projects"><Projects /></section>
@@ -47,7 +51,7 @@
       {#key activeTab}
         <div class="content-wrapper">
           {#if activeTab === 'Hero'}
-            <Hero onNavigate={changeTab} />
+            <Hero onNavigate={changeTab} {isMobile} />
           {:else if activeTab === 'About'}
             <About />
           {:else if activeTab === 'Expertise'}
@@ -61,28 +65,14 @@
       {/key}
     {/if}
   </main>
-
-  <footer style="border-top:1px solid rgba(255,255,255,0.05);padding:1.75rem 1.5rem;text-align:center;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#5c7b99;">
-      crafted with 💙 by <span style="color:#6ecbff">m4yku</span> · built with SvelteKit
-    </p>
-  </footer>
 </div>
 
 <style>
   main {
-    min-height: calc(100vh - 80px);
-    padding-top: 80px;
+    min-height: calc(100vh - 80px); /* [cite: 59] */
+    padding-top: 80px; /* [cite: 59] */
   }
-
-  .mobile-stack { display: flex; flex-direction: column; }
-  
-  .content-wrapper {
-    animation: fadeIn 0.4s ease-out forwards;
-  }
-
-  @keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(10px); } 
-    to { opacity: 1; transform: translateY(0); } 
-  }
+  .mobile-stack { display: flex; flex-direction: column; gap: 2rem; } /* [cite: 60] */
+  .content-wrapper { animation: fadeIn 0.4s ease-out forwards; } /* [cite: 61] */
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } /* [cite: 62] */
 </style>
