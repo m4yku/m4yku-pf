@@ -2,6 +2,9 @@
   import { onMount } from 'svelte';
   import { scrollReveal } from '$lib/scrollReveal';
 
+  // FIX 1: Tanggapin ang onNavigate bilang prop
+  let { onNavigate } = $props(); 
+
   const roles = ['Web Developer', 'OS Enthusiast', 'Custom ROM Lover'];
   let currentRole = $state(0);
 
@@ -10,7 +13,7 @@
     return () => clearInterval(t);
   });
 
-  const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  // FIX 2: Alisin mo na yung `const scrollTo = id => ...` line dito dahil hindi na kailangan.
 </script>
 
 <section id="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 1.5rem;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:60px 60px;">
@@ -37,14 +40,9 @@
       Tinkering with ROMs, pushing pixels, and building for the web.
     </p>
 
-    <div use:scrollReveal={{ delay: 3 }} class="actions">
-      <button onclick={() => scrollTo('projects')} class="btn-primary">View Projects</button>
-      <button onclick={() => scrollTo('contact')} class="btn-outline">Get in touch →</button>
+   <div use:scrollReveal={{ delay: 3 }} class="actions">
+      <button onclick={() => onNavigate('Projects')} class="btn-primary">View Projects</button>
+      <button onclick={() => onNavigate('Contact')} class="btn-outline">Get in touch →</button>
     </div>
-  </div>
-
-  <div use:scrollReveal={{ delay: 4 }} class="scroll-indicator">
-    <span class="scroll-text">scroll</span>
-    <div class="scroll-icon"><div class="scroll-dot"></div></div>
   </div>
 </section>

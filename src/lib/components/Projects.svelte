@@ -52,7 +52,7 @@
   @media (max-width: 768px) { .proj-grid { grid-template-columns: 1fr; } }
 </style>
 
-<section id="projects" style="padding:7rem 1.5rem;position:relative;overflow:hidden;">
+<section id="projects" style="padding:7rem 1.5rem;position:relative;">
   <div style="position:absolute;width:16rem;height:16rem;background:rgba(110,203,255,0.07);border-radius:50%;filter:blur(80px);top:0;left:0;pointer-events:none;"></div>
 
   <div style="max-width:1100px;margin:0 auto;">
@@ -92,10 +92,10 @@
                 <a href={p.demo} target="_blank" rel="noopener noreferrer" class="btn-primary" style="text-decoration:none;font-size:0.72rem;padding:0.28rem 0.8rem;">Live Demo</a>
               {/if}
               {#if p.frontend}
-                <a href={p.frontend} target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration:none;font-size:0.72rem;padding:0.28rem 0.8rem;">Frontend</a>
+                <a href={p.frontend} target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration:none;font-size:0.72rem;padding:0.28rem 0.8rem;">Live View</a>
               {/if}
               {#if p.backend}
-                <a href={p.backend} target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration:none;font-size:0.72rem;padding:0.28rem 0.8rem;">Backend</a>
+                <a href={p.backend} target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration:none;font-size:0.72rem;padding:0.28rem 0.8rem;">Full Project</a>
               {/if}
             </div>
           </div>

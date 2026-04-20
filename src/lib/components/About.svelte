@@ -28,15 +28,14 @@
   const softSkills = ['🧩 Problem-solving', '🔧 Troubleshooting', '🤝 Team collaboration', '📚 Continuous learning'];
 
   const education = [
-    { year: 'Present', school: 'Colegio de San Pascual Baylon',              course: 'BS Computer Science', level: 'Tertiary'        },
-    { year: '2022',    school: 'Arellano University – Elisa Esguerra Campus', course: 'ICT Strand',          level: 'Upper Secondary' },
+    { year: '2026',    school: 'Colegio de San Pascual Baylon',               course: 'BS Computer Science', level: 'Tertiary'        },
+    { year: '2022',    school: 'Arellano University - EEC Malabon Campus',    course: 'ICT Strand',          level: 'Upper Secondary' },
     { year: '2020',    school: 'Polo National High School',                   course: '',                    level: 'Secondary'       },
-    { year: '2016',    school: 'Paco Elementary School',                      course: '',                    level: 'Primary'         },
   ];
 
   const experience = [
-    { role: 'KJ Printing Shop Staff',          period: '2019–2024', desc: 'Handled printing, layout preparation, and machine maintenance.' },
-    { role: 'SPES Student-Worker – BPLO Office', period: '2023',    desc: 'Supported office operations and document processing in a government office.' },
+    { role: 'Intern – WCC ATC North Manila', period: '2025', desc: 'Hardware & Technical Support, and Systems Administration including equipment inventory and deployment.' },
+    { role: 'SPES Student Worker – BPLO Office', period: '2023', desc: 'Managed licensing for public and private businesses and encoded franchises.' },
   ];
 </script>
 
@@ -44,10 +43,10 @@
   /* Image glow animations */
   @keyframes gp1 {
     0%,100% { border-color: rgba(110,203,255,0.15); box-shadow: 0 0 6px rgba(110,203,255,0.08); }
-    50%      { border-color: rgba(110,203,255,0.7);  box-shadow: 0 0 16px rgba(110,203,255,0.4), 0 0 32px rgba(58,183,255,0.2); }
+    50%      { border-color: rgba(110,203,255,0.7); box-shadow: 0 0 16px rgba(110,203,255,0.4), 0 0 32px rgba(58,183,255,0.2); }
   }
   @keyframes gp2 {
-    0%,100% { border-color: rgba(58,183,255,0.1);  box-shadow: 0 0 4px rgba(58,183,255,0.06); }
+    0%,100% { border-color: rgba(58,183,255,0.1); box-shadow: 0 0 4px rgba(58,183,255,0.06); }
     50%      { border-color: rgba(58,183,255,0.55); box-shadow: 0 0 18px rgba(58,183,255,0.35), 0 0 36px rgba(110,203,255,0.15); }
   }
   @keyframes gpm {
@@ -110,7 +109,6 @@
 
   <div style="max-width:1100px;margin:0 auto;">
 
-    <!-- Top row: avatar + intro -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-bottom:3.5rem;" class="about-grid" use:scrollReveal>
 
       <div style="display:flex;justify-content:center;">
@@ -140,18 +138,18 @@
       <div>
         <p class="slabel" style="margin-top:0;">// about me</p>
         <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.75rem,4.5vw,2.75rem);font-weight:700;color:#a3e0ff;margin-bottom:0.4rem;line-height:1.1;">
-          Hi, I'm <span style="color:#6ecbff">Mike</span> 👋
+          Hi, I'm <span style="color:#6ecbff">Mike</span>
         </h2>
-        <p style="font-family:'Syne',sans-serif;font-size:0.95rem;color:#5c7b99;margin-bottom:1.1rem;">Computer Science Student</p>
+        <p style="font-family:'Syne',sans-serif;font-size:0.95rem;color:#5c7b99;margin-bottom:1.1rem;">Computer Science Graduate</p>
         <p style="color:#5c7b99;line-height:1.75;font-size:0.9rem;margin-bottom:1.35rem;">
-          A CS student passionate about technology, troubleshooting, and system operations — seeking real-world IT and web development experience.
+          A Computer Science graduate with a strong interest in tech troubleshooting and system optimization. I have a solid background in IT office support and government operations. I am a determined and fast learner, currently expanding my expertise in modern web technologies and technical support.
         </p>
 
         <p class="slabel" style="margin-top:0;">// contact</p>
-        <div class="crow"><span>📞</span> 0995-054-5009</div>
-        <div class="crow"><span>✉️</span> hbdmike2004@gmail.com</div>
-        <div class="crow"><span>📍</span> 128 Lawa, Obando, Bulacan</div>
-        <div class="crow" style="margin-bottom:1.25rem;"><span>📱</span> 0948-632-1207</div>
+        <div class="crow"><span>📞</span> 0992-054-5009</div>
+        <div class="crow"><span>✉️</span> hbdmike23@gmail.com</div>
+        <div class="crow"><span>📍</span> 128 D Lawa Obando Bulacan</div>
+        <div class="crow" style="margin-bottom:1.25rem;"><span>🔗</span> m4yku.github.io/m4yku-pf/</div>
 
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
           {#each badges as b}
@@ -161,7 +159,6 @@
       </div>
     </div>
 
-    <!-- Bottom row: skills | education + experience -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;" class="about-grid" use:scrollReveal={{ delay: 2 }}>
 
       <div>
@@ -205,4 +202,3 @@
     </div>
   </div>
 </section>
-
