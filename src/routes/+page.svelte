@@ -8,6 +8,14 @@
   import Contact from '$lib/components/Contact.svelte';
   import '../app.css';
 
+  const titleMap = {
+    'Hero': 'Home',
+    'About': 'About Me',
+    'Expertise': 'Skills',
+    'Projects': 'My Works',
+    'Contact': 'Get in Touch'
+  };
+
   let activeTab = $state('Hero'); // 
   let isMobile = $state(false); // 
 
@@ -33,7 +41,32 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
+  onMount(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.6 // Mag-u-update ang title kapag 60% ng section ay kita na
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activeTab = entry.target.id;
+        }
+      });
+    }, observerOptions);
+
+    // I-observe lahat ng sections sa loob ng main
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  });
 </script>
+
+<svelte:head>
+  <title>m4yku · {titleMap[activeTab] || activeTab}</title>
+</svelte:head>
 
 <div class="app-container">
   <Navbar {activeTab} onNavigate={changeTab} />
