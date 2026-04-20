@@ -19,18 +19,26 @@
   let activeTab = $state('Hero'); // 
   let isMobile = $state(false); // 
 
-  onMount(() => {
-    // Check mobile state pagka-load 
-    const checkMobile = () => isMobile = window.innerWidth < 768;
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+ onMount(() => {
+  // Check mobile state pagka-load 
+  const checkMobile = () => isMobile = window.innerWidth < 768;
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
 
-    // I-load ang saved tab mula sa session 
-    const savedTab = sessionStorage.getItem('activeTab');
-    if (savedTab) activeTab = savedTab;
+  // I-load ang saved tab mula sa session 
+  const savedTab = sessionStorage.getItem('activeTab');
+  
+  // VALIDATION: Siguraduhin na 'Hero' ang ilo-load kung 'hero-section' ang nakuha
+  if (savedTab) {
+    if (savedTab === 'hero-section') {
+      activeTab = 'Hero';
+    } else {
+      activeTab = savedTab;
+    }
+  }
 
-    return () => window.removeEventListener('resize', checkMobile);
-  });
+  return () => window.removeEventListener('resize', checkMobile);
+});
 
   function changeTab(tabName) {
     activeTab = tabName; // [cite: 54]
@@ -41,27 +49,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
-  onMount(() => {
-    const observerOptions = {
-      root: null,
-      threshold: 0.6 // Mag-u-update ang title kapag 60% ng section ay kita na
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          activeTab = entry.target.id;
-        }
-      });
-    }, observerOptions);
-
-    // I-observe lahat ng sections sa loob ng main
-    document.querySelectorAll('section[id]').forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  });
+  
 </script>
 
 <svelte:head>
