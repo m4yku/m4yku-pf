@@ -6,29 +6,39 @@
 
   const projects = [
     {
-      id: 1, title: 'SPES Mobile App', type: 'Mobile',
+      id: 1, 
+      title: 'SPES Mobile App', 
+      type: 'Mobile & Website', // <--- Pinalitan mula 'Mobile'
       image: siteAssets.projectImg(1),
       tags: ['FlutterFlow', 'Firebase'],
       demo: 'https://spesjobmatch.flutterflow.app/login',
-      frontend: '', backend: '',
-      description: 'A mobile application for the SPES program that helps out-of-school youth and students with tuition assistance and gaining real work experience.',
+      frontend: '', 
+      backend: '',
+      description: 'A cross-platform application for the SPES program that helps out-of-school youth and students with tuition assistance and gaining real work experience.',
     },
     {
-      id: 2, title: 'Labuyo Fisheries Corp.', type: 'Website',
+      id: 2, 
+      title: 'Labuyo Fisheries Corp.', 
+      type: 'Website',
       image: siteAssets.projectImg(2),
       tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-      demo: '', frontend: '#', backend: '#',
+      demo: '', 
+      frontend: 'https://m4yku.github.io/labuyo-githubpages/', 
+      backend: 'https://github.com/m4yku/labuyo/',
       description: 'An online ordering system for a local milkfish business with an admin panel for managing products, menus, and customer orders.',
     },
     {
-      id: 3, title: 'Sateasfaction Shop', type: 'Website',
+      id: 3, 
+      title: 'Sateasfaction Shop', 
+      type: 'Website',
       image: siteAssets.projectImg(3),
       tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-      demo: '', frontend: '#', backend: '#',
+      demo: '', 
+      frontend: '#', 
+      backend: '#',
       description: 'A web-based ordering and inventory system for a milk tea shop with a customer ordering page and admin dashboard.',
     },
-  ];
-
+];
   let imgErrors = $state({});
 </script>
 
